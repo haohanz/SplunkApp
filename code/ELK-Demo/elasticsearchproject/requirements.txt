@@ -1,0 +1,4 @@
+django
+elasticsearch-dsl==6.0.0
+ipaddress
+uwsgi

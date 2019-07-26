@@ -1,0 +1,18 @@
+<dashboard script="js/nexpose.js">
+  <label>Nexpose</label>
+  <row>
+    <panel>
+      <html>
+        <div>
+            <div class="main-area">
+                <p>Nexpose monitor page.</p>
+                <div id="mysearchbar1"></div>
+                <div id="mysearchcontrols1"></div>
+                <div id="mytimeline1"></div>
+                <div id="myeventsviewer"></div>
+            </div>
+        </div>
+      </html>
+    </panel>
+  </row>
+</dashboard>

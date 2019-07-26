@@ -1,0 +1,6 @@
+*.py
+*.js
+package-lock.json
+*.csv
+!dataset/*
+node_modules/*

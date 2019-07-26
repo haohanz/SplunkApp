@@ -1,0 +1,22 @@
+<dashboard script="js/detail.js">
+    <label id="label">Details</label>
+    <row>
+        <panel>
+            <html>
+                <div>
+                    <div class="main-area">
+                        <div>
+                            <div id="hospital"></div>
+                            <div id="mysearchcontrols1"></div>
+                            <div id="mytimeline1"></div>
+                            <div id="mytable1"></div>
+                        </div>
+                        <br/>
+                        <div class="cwe"></div>
+                    </div>
+                </div>
+            </html>
+        </panel>
+    </row>
+</dashboard>
+

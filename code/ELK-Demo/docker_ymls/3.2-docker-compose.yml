@@ -1,0 +1,130 @@
+version: '3.2'
+
+services:
+    #  db:
+    #    restart: always
+    #    image: postgres
+    #    container_name: bookme_db
+    #    volumes:
+    #      - type: volume
+    #        source: dbdata
+    #        target: /pg_data
+    #    ports:
+    #      - "8001:5432"
+    
+    
+    
+  es:
+    labels:
+      com.example.service: "es"
+      com.example.description: "For searching and indexing data"
+    image: docker.elastic.co/elasticsearch/elasticsearch:5.4.0
+    container_name: es
+    volumes:
+      - type: volume
+        source: esdata
+        target: /usr/share/elasticsearch/data/
+    ports:
+      - "9200:9200"
+
+#  kibana:
+#    labels:
+#      com.example.service: "kibana"
+#      com.example.description: "Data visualisation and for log aggregation"
+#    image: kibana:5.4.3
+#    container_name: kibana
+#    ports:
+#      - "5601:5601"
+#    environment:
+#      - ELASTICSEARCH_URL=http://es:9200
+#    depends_on:
+#      - es
+#
+#  logstash:
+#    image: docker.elastic.co/logstash/logstash:5.2.1
+#    environment:
+#        ES_URL: "https://es:9200"
+#    labels:
+#      com.example.service: "logstash"
+#      com.example.description: "For logging data"
+#    #image: logstash:5.4.3
+#    volumes:
+#      - ./:/logstash_dir
+#    command: logstash -f /logstash_dir/tcp.conf
+#    depends_on:
+#    - es
+#    ports:
+#      - "5959:5959"
+
+# elasticsearch:
+#    image: docker.elastic.co/elasticsearch/elasticsearch:5.4.0
+#    container_name: elasticsearch_540
+#    environment:
+#      - http.host=0.0.0.0
+#      - transport.host=0.0.0.0
+#      - "ES_JAVA_OPTS=-Xms1g -Xmx1g"
+#    volumes:
+#      - esdata:/usr/share/elasticsearch/data
+#      - ./elasticsearch.yml:/usr/share/elasticsearch/config/elasticsearch.yml
+#    ports:
+#      - 9200:9200
+#      - 9300:9300
+#    ulimits:
+#      memlock:
+#        soft: -1
+#        hard: -1
+#      nofile:
+#        soft: 65536
+#        hard: 65536
+#    mem_limit: 2g
+#    cap_add:
+#      - IPC_LOCK
+# kibana:
+#    image: docker.elastic.co/kibana/kibana:5.4.0
+#    container_name: kibana_540
+#    environment:
+#      - SERVER_HOST=0.0.0.0
+#    volumes:
+#      - ./kibana.yml:/usr/share/kibana/config/kibana.yml
+#    ports:
+#      - 5601:5601
+#  headPlugin:
+#    image: mobz/elasticsearch-head:5
+#    container_name: head_540
+#    ports:
+#      - 9100:9100
+
+
+
+
+
+
+#  django_web:
+#    container_name: django_web
+#    labels:
+#      com.example.service: "web"
+#      com.example.description: "Use for the main web process"
+#    build:
+#      context: ./elasticsearchproject/
+#      dockerfile: Dockerfile
+#    #image: bookme_django_web:1.0
+#    depends_on:
+#        #- db
+#      - elasticsearch
+#      - kibana
+#    command: ["./run.sh"]
+#    ports:
+#      - "8000:8000"
+#    environment:
+#      - LOGSTASH_HOST=logstash
+#    expose:
+#      - "5959"
+#    logging:
+#      driver: "json-file"
+#    volumes:
+#      - ./elasticsearchproject:/code
+
+volumes:
+    #dbdata:
+  esdata:
+    driver: local

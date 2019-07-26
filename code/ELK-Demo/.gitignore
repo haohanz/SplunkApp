@@ -1,0 +1,13 @@
+*.pyc
+filebeat-7.0.1-darwin-x86_64/*
+elasticsearchproject/static
+*.sqlite3
+kibana/*
+!kibana/config/*
+filebeat/*
+!filebeat/*.yml
+logstash/*
+!logstash/config/*
+elasticsearch/*
+!elasticsearch/config/*
+docker_ymls/elasticsearch

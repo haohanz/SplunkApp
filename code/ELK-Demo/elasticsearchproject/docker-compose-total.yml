@@ -1,0 +1,63 @@
+version: '3.2'
+services:
+  es:
+      labels:
+          com.example.service: "es"
+          com.example.description: "For searching and indexing data"
+      image: elasticsearch:5.4
+      container_name: elasticsearch
+      volumes:
+          - ./esdata:/usr/share/elasticsearch/data
+      ports:
+          - "9200:9200"
+  logstash:
+      labels:
+        com.example.service: "logstash"
+        com.example.description: "For logging data"
+      image: logstash:5.4.3
+      volumes:
+          - ./:/elk_config
+      command: logstash -f /elk_config/tcp.conf
+      depends_on:
+        - es
+      ports:
+        - "5959:5959"
+  kibana:
+      labels:
+        com.example.service: "kibana"
+        com.example.description: "Data visualisation and for log aggregation"
+      image: kibana:5.4.3
+      container_name: kibana
+      ports:
+        - "5601:5601"
+      environment:
+        - ELASTICSEARCH_URL=http://es:9200
+      depends_on:
+        - es
+  django_web:
+      container_name: django_web
+      labels:
+        com.example.service: "web"
+        com.example.description: "Use for the main web process"
+      build:
+        context: ./
+        dockerfile: Dockerfile
+      depends_on:
+        - es
+        - logstash
+        - kibana
+      ports:
+        - "8000:80"
+      environment:
+        - LOGSTASH_HOST=logstash
+      expose:
+        - "5959"
+volumes:
+  esdata:
+  #web:
+  #	image: elasticsearchproject:1.0
+  #    command: ./run.sh
+  #    volumes:
+  #    	- .:/code
+  #    ports:
+  #    	- "8000:80"

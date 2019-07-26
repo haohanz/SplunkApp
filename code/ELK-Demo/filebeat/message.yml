@@ -1,0 +1,8 @@
+filebeat.prospectors:
+- type: log
+  enabled: true
+  paths:
+    - ./sample.log
+
+output.logstash:
+  hosts: ["localhost:5044"]

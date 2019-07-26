@@ -1,0 +1,12 @@
+<nav search_view="search">
+  <view name="search" />
+  <view name="cve_and_cwe_search" />
+  <view name="Reports" />
+  <view name="alerts" />
+  <view name="dashboards" />
+  <view name="nexpose" />
+  <view name="hospital" />
+  <view name="aggregate" default='true' />
+  <view name="visualization" />
+  <view name="upload" />
+</nav>

@@ -1,0 +1,108 @@
+<dashboard script="js/aggregate.js">
+    <label>Aggregate</label>
+    <description>This report contains Rapid 7 Nexpose vulnerability data of medical devices, grouped by Manufacturer and the combination of Manufacturer and Model.</description>
+    <row>
+        <html>
+            <head>
+                <title>Document</title>
+
+                <style type="text/css">
+                    .report {
+                    border-top-width: 1px;
+                    border-top-color: #989393;
+                    }
+
+                    .make {
+                    display: block;
+                    padding-top: 10px;
+                    padding-right: 5px;
+                    padding-bottom: 10px;
+                    padding-left: 0.5em;
+                    text-decoration: none;
+                    border-top-width: 0px;
+                    border-left-width: 0px;
+                    border-top-style: solid;
+                    border-left-style: solid;
+                    border-top-color: #989393;
+                    border-left-color: #333333;
+                    }
+
+                    .report a:link,.report a:visited {
+                    color: #FFFFFF;
+                    background-color: #242932;
+                    }
+
+                    .report a:hover {
+                    color: #1E1E1E;
+                    background-color: #A1A1A1;
+                    }
+
+                    .report a {
+                    text-decoration: none;
+                    display: block;
+                    margin: 0px;
+                    padding-top: 3px;
+                    padding-right: 3px;
+                    padding-bottom: 3px;
+                    padding-left: 0.5em;
+                    border-right-width: 6px;
+                    border-left-width: 8px;
+                    border-right-style: solid;
+                    border-left-style: solid;
+                    border-right-color: #3C3C3C;
+                    border-left-color: #3C3C3C;
+                    }
+
+                    .make .imgs {
+                    display: inline-block;
+                    vertical-align: middle;
+                    }
+
+                    .make .imgs:hover {
+                    cursor: pointer;
+                    }
+
+                    .make .infos {
+                    display: inline-block;
+                    }
+
+                    .make .model {
+                    width: fit-content;
+                    display: block;
+                    margin-top: 0px;
+                    margin-bottom: 0px;
+                    margin-left: 36px;
+                    }
+
+                    table {
+                    margin: 5px;
+                    border: 1px solid #BfB9B6;
+                    }
+
+                    .report tr td a:link,
+                    .report tr td a:visited {
+                    color: #666666;
+                    background-color: #FFFFFF;
+                    margin-left: 4px;
+                    margin-right: 4px;
+                    border-left-width: 0px;
+                    border-right-width: 0px;
+                    }
+
+                    .report tr td a:hover {
+                    color: #F8F8F8;
+                    background-color: #9D968F;
+                    }
+
+                </style>
+            </head>
+            <body>
+                <div class="cve"></div>
+                <h2><strong id="title">Group by Make / Make and Model</strong></h2>
+                <div class="report">
+                    <p>No results found.</p>
+                </div>
+            </body>
+        </html>
+    </row>
+</dashboard>

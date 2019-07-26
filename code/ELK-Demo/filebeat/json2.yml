@@ -1,0 +1,17 @@
+filebeat.prospectors:
+- paths: 
+    - ./access_log.json
+  documnet_type: log
+  json.keys_under_root: true
+  json.add_error_key: true
+
+  #processors:
+  #  - decode_json_fields:
+  #      # fields: ["status", "version", "date_zone", "date_mday", "date_minute", "file", "root", "clientip", "index", "sourcetype", "JSESSIONID", "splunk_server", "source", "linecount", "other", "date_wday", "msg", "method", "date_hour", "date_second", "date_year", "punct", "host", "referer", "user", "useragent", "itemId", "uri_path", "ident", "timestartpos", "date_month", "bytes", "uri", "_time", "timeendpos", "_raw", "action", "req_time", "referer_domain", "uri_query"]
+  #      fields: ["result"]
+
+
+output.logstash:
+  hosts: ["localhost:5044"]
+
+

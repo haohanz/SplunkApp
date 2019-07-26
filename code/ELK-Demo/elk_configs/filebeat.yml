@@ -1,0 +1,16 @@
+filebeat.inputs:
+- type: log
+  enabled: true
+  paths: 
+    - ./access_log.json
+  json.keys_under_root: true
+
+processors:
+  - decode_json_fields:
+      fields: ["result"]
+
+
+output.logstash:
+  hosts: ["localhost:5044"]
+
+

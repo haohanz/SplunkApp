@@ -1,0 +1,21 @@
+<dashboard script="js/hospital.js">
+  <label>Hospital</label>
+  <row>
+    <panel>
+      <html>
+        <div>
+            <div class="main-area">
+                <p>This example greps grouped hospital search result, combined with nexpose logs.</p>
+                <div id="mysearchbar1"></div>
+                <div id="mysearchcontrols1"></div>
+                <div id="mytimeline1"></div>
+                <div align="right">
+                <button id="return">Return to Nexpose</button> <button id="refresh">Refresh</button>
+                </div>
+                <div id="mytable1"></div>
+            </div>
+        </div>
+      </html>
+    </panel>
+  </row>
+</dashboard>

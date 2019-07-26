@@ -1,0 +1,120 @@
+<dashboard script="js/upload.js">
+    <label>Upload</label>
+    <row>
+        <panel>
+            <html>
+                <style type="text/css">
+
+                    .dashboard-panel  {
+                    font-size: 17px;
+                    }
+
+                    #indexSelector  {
+                    float: left;
+                    width: 20%;
+                    min-width: 50px;
+                    height: 42px;
+                    padding: 10px;
+                    border-radius: 0px;
+                    border: 1px solid grey;
+                    background: #f1f1f1;
+                    text-indent: 5px;
+                    color: #616876;
+                    cursor: pointer;
+                    }
+
+                    #indexInput  {
+                    float: left;
+                    width: 20%;
+                    height: 42px;
+                    padding: 10px 15px 10px 15px;
+                    background: #f1f1f1;
+                    border: 1px solid grey;
+                    margin-left: 10px;
+                    }
+
+                    #createButton, #uploadButton  {
+                    width: 10%;
+                    min-width: 60px;
+                    height: 42px;
+                    background: #616876;
+                    color: white;
+                    font-size: 17px;
+                    border: 1px solid grey;
+                    border-left: 0px;
+                    margin: 0px 10px 0px 0px;
+                    cursor: pointer;
+                    }
+
+                    #createButton:hover, #uploadButton:hover  {
+                    background: #242932;
+                    }
+
+                    #fileName  {
+                    float: left;
+                    width: 31%;
+                    min-width: 100px;
+                    height: 42px;
+                    padding: 10px;
+                    border-radius: 0px;
+                    border: 1px solid #c7baa8;
+                    text-indent: 5px;
+                    color: #94887d;
+                    cursor: default;
+                    }
+
+                    .file  {
+                    position: relative;
+                    display: inline-block;
+                    background: #b7a99b;
+                    line-height: 32px;
+                    border: 1px solid #c7baa8;
+                    border-radius: 0px;
+                    padding: 4px 25px;
+                    overflow: hidden;
+                    color: #ffffff;
+                    font-size: 17px;
+                    }
+
+                    .file input  {
+                    position: absolute;
+                    right: 0;
+                    top: 0;
+                    opacity: 0;
+                    font-size: 100px;
+                    cursor: pointer;
+                    }
+
+                    .file:hover  {
+                    background: #e6be8a;
+                    text-decoration: none;
+                    }
+
+                </style>
+                <h1>Upload file to given index</h1>
+                <br></br>
+                <div>
+                    <p>1. Select from existing indexes/Create new index</p>
+                    <select name="Index" id="indexSelector">
+                        <option value="">Select</option>
+                    </select>
+                    <input type="text" placeholder="Enter new index..." id="indexInput" />
+                    <button id="createButton">Create Index</button>
+                </div>
+                <br></br>
+                <div>
+                    <p>2. Select file</p>
+                    <input type="text" disabled="disable" value="No file chosen" id="fileName" />
+                    <div class="file">Choose file
+                        <input type="file" id="fileInput" name="name" />
+                    </div>
+                </div>
+                <br></br>
+                <div>
+                    <p>3. Finish and submit</p>
+                    <button id="uploadButton">SUBMIT</button>
+                </div>
+            </html>
+        </panel>
+    </row>
+</dashboard>

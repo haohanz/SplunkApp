@@ -1,0 +1,73 @@
+<dashboard>
+    <label>CVE/CWE Search</label>
+    <row>
+        <html>
+            <head>
+
+                <style type="text/css">
+                    body {
+                    font-family: Arial;
+                    }
+
+                    form.search input[type=text] {
+                    float: left;
+                    width: 45%;
+                    height: 42px;
+                    padding: 10px 25px 10px 25px;
+                    font-size: 17px;
+                    border: 1px solid grey;
+                    background: #f1f1f1;
+                    }
+
+                    form.search .button {
+                    float: left;
+                    width: 12%;
+                    height: 42px;
+                    min-width: 100px;
+                    padding: 10px;
+                    background: #616876;
+                    color: white;
+                    font-size: 17px;
+                    border: 1px solid grey;
+                    border-left: 0px;
+                    cursor: pointer;
+                    }
+
+                    form.search .button:hover {
+                    background: #242932;
+                    }
+
+                    form.search .select  {
+                    float: left;
+                    width: 18%;
+                    min-width: 100px;
+                    height: 42px;
+                    padding: 10px;
+                    border-radius: 0px;
+                    border: 1px solid grey;
+                    background: #f1f1f1;
+                    font-weight:bold;
+                    text-indent: 10px;
+                    color: #242932;
+                    cursor: pointer;
+                    }
+
+                </style>
+            </head>
+
+            <body>
+                <br></br>
+                <p>Please type in CVE ID or CWE ID / Vulnerability keywords to search for devices that are vulnerable to given vulnerability.</p>
+                <form class="search" action="/app/safemed/aggregate" id="form">
+                    <input type="text" placeholder="Enter keywords..." name="keyword"></input>
+                    <select name="type" class="select">
+                        <optgroup label="SEARCH BY">SEARCH BY</optgroup>
+                        <option value="cve">CVE ID</option>
+                        <option value="cwe">CWE ID / Vulnerability Keyword</option>
+                    </select>
+                    <input class="button" type="submit"></input>
+                </form>
+            </body>
+        </html>
+    </row>
+</dashboard>
