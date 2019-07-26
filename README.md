@@ -1,19 +1,22 @@
 # Splunk Demo v1.4
 
 ## Summary
-A customized Splunk application with nexpose logs, hospital records (device asset fields), CVE and CWE datasets.
-- New features:
-    - Aggregate Page
-        * View aggregated results of device info and vulnerability name
-    - Search Page
-        * Search by vulnerability keyword -> View related devices
-        * Search by CVE-ID/CWE-ID -> View related devices
-    - File Upload Page
-        * File upload
-        * Create index for file storage
-    - Visualization Page
-        * Charts and diagrams for aggregated data
-- Old features:
+A customized Splunk application for medical device vulnerability search and aggregation of Rapid7 Nexpose records, hospital records, Mitre and NVD database using Splunk API, Javascript, Node.js, and XML. 
+
+Built Splunk backend and node server with Splunk Javascript API and Node.js, applied unit test using Artillery, performance test using Splunk RESTful API, and workflow test using Selenium.
+
+## Overview
+- Aggregate Page
+    * View aggregated results of device info and vulnerability name
+- Search Page
+    * Search by vulnerability keyword -> View related devices
+    * Search by CVE-ID/CWE-ID -> View related devices
+- File Upload Page
+    * File upload
+    * Create index for file storage
+- Visualization Page
+    * Charts and diagrams for aggregated data
+- Other features:
     * Click on Nexpose fields (e.g. "host") to search for filtered hospital records
     * Click on Hospital fields to search for filtered and aggregated nexpose & hospital results
     * Click on manufacturer or manufacturer & model to see aggregated results
