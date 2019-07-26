@@ -1,4 +1,4 @@
-# Splunk Demo v1.4
+# SafeMed Splunk Application
 
 ## Summary
 A customized Splunk application for medical device vulnerability search and aggregation of Rapid7 Nexpose records, hospital records, Mitre and NVD database using Splunk API, Javascript, Node.js, and XML. 
@@ -128,3 +128,11 @@ $ ./build.sh
 ![Correlated results with clicked value](https://github.com/haohanz/SafeMed/blob/master/artifact/images/v1.2_correlate.png)
 
 
+## Contributors
+- Haohan Zhang (haohanz@andrew.cmu.edu)
+- Yucheng Wang (yucheng4@andrew.cmu.edu)
+- Shuo Li (shuoli2@andrew.cmu.edu)
+- ChenLin Xu (cxu2@andrew.cmu.edu)
+
+## Mentor
+- Hasan Yasar (hyasar@andrew.cmu.edu)
