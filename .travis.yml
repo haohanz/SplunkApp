@@ -1,7 +1,19 @@
-language: node_js
-node_js:
-  - "6"
-  - "4"
-script:
-  - cd code/node/
-  - npm install
+matrix:
+  include:
+    - language: python
+      python:
+        - 3.4
+      before_install:
+        - cd code/Test/Python/
+      script:
+        - pip install -r requirements.txt
+
+    - language: node_js
+      node_js:
+        - "6"
+        - "4"
+      before_install:
+        - cd code/node/
+      script:
+        - npm install
+
