@@ -22,6 +22,11 @@ Built Splunk backend and node server with Splunk Javascript API and Node.js, app
     * Click on Hospital fields to search for filtered and aggregated nexpose & hospital results
     * Click on manufacturer or manufacturer & model to see aggregated results
 
+## Supported OS
+- Max OS
+- Linux
+- Windows
+
 ## Data Schema
 - Nexpose
 - Hospital (stored with IP)
@@ -35,7 +40,8 @@ Built Splunk backend and node server with Splunk Javascript API and Node.js, app
 - [Install Splunk](https://www.splunk.com/en_us/download/splunk-enterprise.html?utm_campaign=bing_amer_en_search_brand&utm_source=bing&utm_medium=paidsearch&utm_term=%2Bsplunk%20%2Bdownload&utm_content=Splunk_Enterprise_Demo&_bt=71949381564285&msclkid=6bcd6643d7301227edc33aaf1a6c0c63)
 - [Install Node.js](https://nodejs.org/)
 - [Install npm](https://www.npmjs.com/get-npm)
-- [Install bash](https://www.wpxbox.com/how-to-enable-install-bash-windows-10/)
+- [Install Bash](https://www.wpxbox.com/how-to-enable-install-bash-windows-10/) (for Mac OS/Linux/Unix)
+- [Install Git Bash](https://git-scm.com/download/win) (for Windows, then open Git bash as administrator)
 
 #### Install App
 - Clone this folder
@@ -44,7 +50,7 @@ $ git clone https://github.com/haohanz/SafeMed.git
 ```
 - Inside SafeMed's root folder, run
 ```
-$ ./build.sh
+$ sh ./build.sh
 ```
 - Then input your Splunk username and Splunk password as instructed. 
 - If Splunk Demon is not running, need to input username and password again to start Splunk Demon and Splunk Web.
