@@ -126,7 +126,7 @@ require([
                 // aggregate nexpose+hospital+cve, filtered by make&model
                 searchText = `${searchURL}"${make}" "${model}" ${query}&earliest=0`.replace("'", "%27");
                 var tableHTML = `<tr>
-                    <td><a href='${searchText}'>${model}</a></td>`;
+                    <td class="head"><a href='${searchText}'>${model}</a></td>`;
                 for (var cwe in modelObj.cwes) {
                     if (cwe && modelObj.cwes[cwe]) {
                         var detailHref = `${detailURL}make=${make}&model=${model}&cwe=${cwe}`.replace("'", "%27");

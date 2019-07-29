@@ -94,6 +94,14 @@
                     background-color: #9D968F;
                     }
 
+                    .report tr td {
+                    border: 1px solid #BfB9B6;
+                    }
+
+                    .report td.head {
+                    min-width: 100px;
+                    background-color: #D2D2D2;
+                    }
                 </style>
             </head>
             <body>
