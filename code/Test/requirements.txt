@@ -1,3 +1,5 @@
 urllib3>=1.22
 httplib2>=0.13.0
 threaded>=3.0.3
+selenium==3.141.0
+html-testRunner==1.2

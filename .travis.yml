@@ -4,7 +4,7 @@ matrix:
       python:
         - 3.4
       before_install:
-        - cd code/Test/Python/
+        - cd code/Test/
       script:
         - pip install -r requirements.txt
 
