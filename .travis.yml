@@ -14,6 +14,8 @@ matrix:
         - "4"
       before_install:
         - cd code/node/
-      script:
+        - npm install -g codecov
+        - npm install -g istanbul
+      install:
         - npm install
 
