@@ -1,7 +1,13 @@
 {
     "name": "nodeapp",
-    "version": "1.0.0",
+    "version": "1.4.2",
+    "main": "app.js",
+    "scripts": {
+        "test": "istanbul cover ./node_modules/mocha/bin/_mocha -- -R spec && codecov"
+    },
     "dependencies": {
+        "assert": "^2.0.0",
+        "chai": "^4.2.0",
         "cors": "^2.8.5",
         "debug": "^4.1.1",
         "express": "^4.5.0",
@@ -12,5 +18,12 @@
         "path": "^0.12.7",
         "splunk-sdk": "^1.9.0",
         "winston": "^3.2.1"
+    },
+    "devDependencies": {
+        "supertest": "^4.0.2",
+        "expect.js": "^0.3.1",
+        "mocha": "^6.2.0",
+        "istanbul": "^0.4.5",
+        "codecov": "^3.1.0"
     }
 }

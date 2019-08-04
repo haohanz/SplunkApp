@@ -1,4 +1,26 @@
+const HOST = '99.250.94.53';
+
 var globals = {
+    nodeUrl: `http://${HOST}:4000`,
+    url: `http://${HOST}:8000`,
+    hospital_idx: "hospital_data",
+    nexpose_idx: "nexpose",
+    cve_idx: "cve",
+    cwe_idx: "cwe",
+    internal_idx: "_internal",
+    audit_idx: "_audit",
+    history_idx: "history",
+    subpath: "/vuln/detail/",
+    options: {
+            hostname: "nvd.nist.gov",
+            path: ""
+    },
+    searchParams: {
+        exec_mode: "normal",
+        output_mode: "json",
+        sort_key: "_time",
+        earliest_time: "2012-06-20T16:27:43.000-07:00"
+    },
     SET: new Set(["vuln_description",
                  "vuln_cvssv3_base_score",
                  "vuln_cvssv3_base_score_severity",
@@ -20,7 +42,8 @@ var globals = {
                  "vuln_cvssv2_additional"]),
     ATTR_ID: "data-testid",
     NEXPOSE: "nexpose",
-    ADDITIONAL: "vuln_cvssv2_additional"};
+    ADDITIONAL: "vuln_cvssv2_additional"
+};
 
 module.exports = globals;
 
