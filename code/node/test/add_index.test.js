@@ -1,7 +1,7 @@
 var expect  = require("chai").expect;
 var request = require("supertest");
 
-var nodeUrl = require("../global.js").nodeUrl;
+var app = require("../app.js");
 
 describe("Test Add Index on Node Server", function() {
     describe("Add Event on Node Server", function() {
@@ -9,7 +9,7 @@ describe("Test Add Index on Node Server", function() {
         this.timeout(5000);
 
         it("should return status 400 on empty request", function(done) {
-            request(nodeUrl)
+            request(app)
                 .get('/add_index')
                 .send({})
                 .expect(400)
@@ -20,7 +20,7 @@ describe("Test Add Index on Node Server", function() {
         });
 
         it("should return status 409 on already existex index", function(done) {
-            request(nodeUrl)
+            request(app)
                 .get('/add_index')
                 .send({idx: "history"})
                 .expect(409)
@@ -31,7 +31,7 @@ describe("Test Add Index on Node Server", function() {
         });
 
         it("should return status 200 on new index", function(done) {
-            request(nodeUrl)
+            request(app)
                 .get('/add_index')
                 .send({idx: "new"})
                 //.expect(200)

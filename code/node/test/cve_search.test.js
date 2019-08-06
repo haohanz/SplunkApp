@@ -1,7 +1,7 @@
 var expect  = require("chai").expect;
 var request = require("supertest");
 
-var nodeUrl = require("../global.js").nodeUrl;
+var app = require("../app.js");
 
 describe("Test CVE Search on Node Server", function() {
     describe("CVE Search on Node Server", function() {
@@ -10,8 +10,8 @@ describe("Test CVE Search on Node Server", function() {
         this.timeout(5000);
 
         it("should return status 200 on empty request", function(done) {
-            request(nodeUrl)
-                .get('/cve_search')
+            request(app)
+                .post('/cve_search')
                 .send({})
                 .expect(200)
                 .end(function(err, res) {
@@ -21,8 +21,8 @@ describe("Test CVE Search on Node Server", function() {
         });
 
         it("should be case insensitive", function(done) {
-            request(nodeUrl)
-                .get('/cve_search')
+            request(app)
+                .post('/cve_search')
                 .send({"cve": cve.toUpperCase()})
                 .end(function(err, res) {
                     if (err) return done(err);
@@ -32,8 +32,8 @@ describe("Test CVE Search on Node Server", function() {
 
         it("should return empty cwe only with none existing new cve", function(done) {
             var cve = "cve-2019-07256";
-            request(nodeUrl)
-                .get('/cve_search')
+            request(app)
+                .post('/cve_search')
                 .send({"cve": cve.toUpperCase()})
                 .expect('Content-Type', /json/)
                 .expect(404)
@@ -47,8 +47,8 @@ describe("Test CVE Search on Node Server", function() {
 
         it("should return cve and cwe with new valid cve", function(done) {
             var cve = "cve-2017-5662";
-            request(nodeUrl)
-                .get('/cve_search')
+            request(app)
+                .post('/cve_search')
                 .send({"cve": cve.toUpperCase()})
                 .expect('Content-Type', /json/)
                 .expect(200)
@@ -63,8 +63,8 @@ describe("Test CVE Search on Node Server", function() {
 
         it("should return cve and cwe with matched cve", function(done) {
             var cve = "cve-2018-15890";
-            request(nodeUrl)
-                .get('/cve_search')
+            request(app)
+                .post('/cve_search')
                 .send({"cve": cve.toUpperCase()})
                 .expect('Content-Type', /json/)
                 .expect(200)
@@ -79,8 +79,8 @@ describe("Test CVE Search on Node Server", function() {
 
         it("should return correct cve and cwe with status 200", function(done) {
             var cve = "cve-2018-15890";
-            request(nodeUrl)
-                .get('/cve_search')
+            request(app)
+                .post('/cve_search')
                 .send({"cve": cve.toUpperCase()})
                 .expect('Content-Type', /json/)
                 .expect(200)
@@ -96,8 +96,8 @@ describe("Test CVE Search on Node Server", function() {
 
         it("should return correct cve and cwe with status 200", function(done) {
             var cve = "cve-2018-15892";
-            request(nodeUrl)
-                .get('/cve_search')
+            request(app)
+                .post('/cve_search')
                 .send({"cve": cve.toUpperCase()})
                 .expect('Content-Type', /json/)
                 .expect(200)
@@ -113,8 +113,8 @@ describe("Test CVE Search on Node Server", function() {
 
         it("should return status 404 when search non-existed cve", function(done) {
             var cve = "cve-9102";
-            request(nodeUrl)
-                .get('/cve_search')
+            request(app)
+                .post('/cve_search')
                 .send({"cve": cve.toUpperCase()})
                 .expect('Content-Type', /json/)
                 .expect(404)
@@ -129,8 +129,8 @@ describe("Test CVE Search on Node Server", function() {
 
         it("should return status 200 and save cve when search new cve", function(done) {
             var cve = "cve-2018-15893";
-            request(nodeUrl)
-                .get('/cve_search')
+            request(app)
+                .post('/cve_search')
                 .send({"cve": cve.toUpperCase()})
                 .expect('Content-Type', /json/)
                 .expect(200)

@@ -20,7 +20,7 @@ module.exports.login = function(username, password) {
 		username: username,
 		password: password,
 		scheme:"https",
-		host:"localhost",
+		host: require('./global.js').HOST,
 		port:"8089"
 	});
 

@@ -3,12 +3,14 @@
     "version": "1.4.2",
     "main": "app.js",
     "scripts": {
-        "test": "istanbul cover ./node_modules/mocha/bin/_mocha -- -R spec && codecov"
+        "start": "node app.js",
+        "test": "istanbul cover ./node_modules/mocha/bin/_mocha -- -R spec --exit && ./node_modules/.bin/codecov"
     },
     "dependencies": {
         "assert": "^2.0.0",
         "chai": "^4.2.0",
         "cors": "^2.8.5",
+        "coveralls": "^3.0.5",
         "debug": "^4.1.1",
         "express": "^4.5.0",
         "htmlparser2": "^3.10.1",
@@ -20,10 +22,11 @@
         "winston": "^3.2.1"
     },
     "devDependencies": {
-        "supertest": "^4.0.2",
+        "codecov": "^3.1.0",
         "expect.js": "^0.3.1",
-        "mocha": "^6.2.0",
         "istanbul": "^0.4.5",
-        "codecov": "^3.1.0"
+        "mocha": "^6.2.0",
+        "start-server-and-test": "^1.9.1",
+        "supertest": "^4.0.2"
     }
 }

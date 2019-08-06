@@ -61,8 +61,12 @@ var processHttpsResponse = function(cve, result, res) {
                     res.status(404);
                 }
                 if (res) {
-                    res.send(response);
-                    res.end();
+                    try {
+                        res.send(response);
+                        res.end();
+                    } catch (e) {
+                        debug(e);
+                    }
                 }
             }
         }, {decodeEntities: true});

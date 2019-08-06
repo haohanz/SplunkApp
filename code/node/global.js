@@ -1,4 +1,4 @@
-const HOST = '99.250.94.53';
+const HOST = '74.109.247.7';
 
 var globals = {
     nodeUrl: `http://${HOST}:4000`,
@@ -46,4 +46,5 @@ var globals = {
 };
 
 module.exports = globals;
+module.exports.HOST = HOST;
 
