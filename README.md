@@ -1,5 +1,5 @@
 # SafeMed Splunk Application 
-[![Build Status](https://travis-ci.com/haohanz/SplunkApp.svg?branch=develop)](https://travis-ci.com/haohanz/SplunkApp) ![version](https://img.shields.io/badge/version-1.4.2-blue) [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
+[![Build Status](https://travis-ci.com/haohanz/SplunkApp.svg?branch=develop)](https://travis-ci.com/haohanz/SplunkApp) ![version](https://img.shields.io/badge/version-1.4.2-blue) [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0) [![codecov](https://codecov.io/gh/haohanz/SplunkApp/branch/codecov_test/graph/badge.svg)](https://codecov.io/gh/haohanz/SplunkApp)
 
 ## Summary
 A customized Splunk application for medical device vulnerability search and aggregation of Rapid7 Nexpose records, hospital records, Mitre and NVD database using Splunk API, Javascript, Node.js, and XML. 
